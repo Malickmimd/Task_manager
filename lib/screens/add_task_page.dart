@@ -17,12 +17,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color(0xFF333333),
         title: const Align(
           alignment: Alignment.centerLeft,
           child: Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text('Todo App', style: TextStyle(color: Colors.white)),
+            child: Text('Todo App',
+                style: TextStyle(color: Colors.white, fontSize: 24)),
           ),
         ),
       ),
@@ -131,10 +133,11 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   Navigator.pop(context, true);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey,
+                  backgroundColor: const Color(0xFF333333),
                   minimumSize: const Size(150, 50),
                 ),
-                child: const Text('Ajouter', style: TextStyle(fontSize: 18)),
+                child: const Text('Ajouter',
+                    style: TextStyle(fontSize: 16, color: Color(0xFFffffff))),
               ),
             ),
           ],
@@ -144,7 +147,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
         onPressed: () {
           Navigator.pop(context);
         },
-        backgroundColor: Colors.red,
+        backgroundColor: const Color(0xFF333333),
         child: const Icon(Icons.close, color: Colors.white),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
@@ -154,13 +157,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
   Color _getStatusColor(String status) {
     switch (status) {
       case 'In progress':
-        return Colors.blue;
+        return const Color(0xFF56CCF2);
       case 'Done':
-        return Colors.green;
+        return const Color(0xFF27AE60);
       case 'Bug':
-        return Colors.red;
+        return const Color(0xFFEB5757);
       default:
-        return Colors.grey;
+        return const Color(0xFF4F4F4F);
     }
   }
 }

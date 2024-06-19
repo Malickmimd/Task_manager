@@ -37,8 +37,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text('Todo App', style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF333333),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: const [
+            Text('Todo App',
+                style: TextStyle(color: Colors.white, fontSize: 24)),
+          ],
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -108,8 +114,8 @@ class _HomePageState extends State<HomePage> {
             _loadTasks();
           }
         },
-        backgroundColor: Colors.grey,
-        child: const Icon(Icons.add),
+        backgroundColor: const Color(0xFF333333),
+        child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }
@@ -123,13 +129,13 @@ class _HomePageState extends State<HomePage> {
   Color _getStatusColor(String status) {
     switch (status) {
       case 'In progress':
-        return Colors.blue;
+        return const Color(0xFF56CCF2);
       case 'Done':
-        return Colors.green;
+        return const Color(0xFF27AE60);
       case 'Bug':
-        return Colors.red;
+        return const Color(0xFFEB5757);
       default:
-        return Colors.grey;
+        return const Color(0xFF4F4F4F);
     }
   }
 }

@@ -59,13 +59,13 @@ class _TaskFilterState extends State<TaskFilter> {
   Color _getStatusColor(String status) {
     switch (status) {
       case 'In progress':
-        return Colors.blue;
+        return const Color(0xFF56CCF2);
       case 'Done':
-        return Colors.green;
+        return const Color(0xFF27AE60);
       case 'Bug':
-        return Colors.red;
+        return const Color(0xFFEB5757);
       default:
-        return Colors.grey;
+        return const Color(0xFF4F4F4F);
     }
   }
 }
